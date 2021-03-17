@@ -3,4 +3,11 @@
 <p><%= @restaurant.name%></p>
 <p><%= @restaurant.address%></p>
 <p><%= @restaurant.category%></p>
-<p><%= @restaurant.phone_number%></p>
+<p>Reviews:</p>
+<ul>
+<% @restaurant.reviews.each do |review|%>
+  <li>Comment: <%= review.content%>   ||  Stars: <%= review.rating%></li>
+<% end %>
+</ul>
+
+<%= link_to "Go back to list of restaurants", restaurants_path%>
